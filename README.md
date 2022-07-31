@@ -10,5 +10,7 @@ Pre-requisites:
         
 	3) Start Postgres in docker container
 
-	4) Start local Registry in docker container
+	4) Create docker-registry-volume directory in local-registry
+
+	5) Start local Registry in docker container
 
