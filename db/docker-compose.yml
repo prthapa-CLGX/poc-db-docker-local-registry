@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  db:
+    image: postgres:14.2-alpine
+    volumes:
+      - ./init_db.sql:/docker-entrypoint-initdb.d/1-init.sql
+    container_name: poc-postgres
+    restart: unless-stopped
+    ports:
+      - "7654:5432"
+    environment:
+      DB_USER: robot
+      POSTGRES_PASSWORD: robotpass
+    networks:
+      - poc-network
+
+networks:
+  poc-network:
+    driver: bridge
+    external: true
